@@ -1,0 +1,17 @@
+<launch>
+    <param name="/use_sim_time" value="true" />
+        <!-- start world -->
+            <node name="gazebo" pkg="gazebo_ros" type="gazebo"
+                args="$(find turtlebot_gazebo)/worlds/empty.world" respawn="false" output="screen" />
+        <!-- include our robots -->
+            <include file="$(find multi_ws)/launch/robots.launch"/>
+        <!-- launch the node for movement-->
+        <!--  
+            <node name="p1-all-at-once" pkg="multi_ws" type="p1-all-at-once.py"
+                respawn="false" output="screen"/> 
+        -->
+        <!--
+            <node name="p1sequential" pkg="multi_ws" type="p1-sequential3.py"
+                respawn="false" output="screen"/>
+        -->
+</launch>
